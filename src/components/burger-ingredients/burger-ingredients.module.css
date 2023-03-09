@@ -1,0 +1,20 @@
+.container {
+    margin: 0;
+       
+}
+
+.title {
+    text-align: left;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingredients {
+    max-height: 756px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  
+}

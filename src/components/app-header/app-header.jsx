@@ -5,8 +5,8 @@ import cn from 'classnames';
 
 export const AppHeader = () => {
     return (
-        <header className={style.header}>
-            <nav className={cn(style.nav, 'p-4')}>
+        <header className={cn(style.header, 'pt-4', 'pb-4')}>
+            <nav className={style.nav}>
                 <div className={style.box}>
                     <a href="#" className={cn(style.link, style.link_active)}>
                         <BurgerIcon type="primary" />

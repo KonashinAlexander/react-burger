@@ -1,0 +1,17 @@
+.box_big {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-height: 260px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.box_small {
+    display: block;
+}
+
+.container {
+    margin: 0;
+}

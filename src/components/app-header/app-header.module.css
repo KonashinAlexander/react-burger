@@ -1,7 +1,7 @@
 .header {
-    width: 1280px;
+    max-width: 1240px;
     margin: 0 auto;
-    background: #1C1C21;
+    background-color: var(--background);
 }
 
 .link {
@@ -19,6 +19,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
 
 }
 
