@@ -10,6 +10,26 @@
 
 .box_small {
     display: block;
+    padding-left: 16px;
+}
+
+.box_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.box__total_flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+.icon {
+    display: block;
+    margin-right: 8px;
 }
 
 .container {

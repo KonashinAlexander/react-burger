@@ -22,9 +22,9 @@ export const BurgerIngredients = ({ingredients}) => {
 
     return ( 
         <div className={cn(style.container)}>
-            <h1 className={cn(style.title, "text text_type_main-large")}>Соберите бургер</h1>
+            <h1 className={cn(style.title, "text text_type_main-large", 'mt-10')}>Соберите бургер</h1>
 
-            <section className={cn(style.tabs)}>               
+            <section className={cn(style.tabs, 'mt-5', 'mb-10')}>               
                     <Tab value="buns" active={current === 'buns'} onClick={handleClickTab}>
                         Булки
                     </Tab>
