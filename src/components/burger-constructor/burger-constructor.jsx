@@ -26,8 +26,8 @@ export const BurgerConstructor = ( {constructorIngredients}) => {
             
                 <div className={cn(style.box_big, 'mt-4')}>
                     {otherIngredients.map((data) => 
-                                        <div className={cn(style.box_flex)}>
-                                            <DragIcon className={cn(style.icon)}></DragIcon>
+                                        <div className={cn(style.box_flex)} key={data._id} >
+                                            <DragIcon className={cn(style.icon)} />
                                             <ConstructorElement 
                                             {...data} 
                                             key={data._id} 
