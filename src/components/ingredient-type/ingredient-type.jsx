@@ -3,9 +3,14 @@ import PropTypes, { number, string } from 'prop-types';
 import cn from 'classnames';
 import { BurgerIngredient } from "@ya.praktikum/react-developer-burger-ui-components";
 import style from '../ingredient-type/ingredient-type.module.css'
+import { Modal } from "../modal/modal";
+import { IngredientDetails } from "../ingredient-details/ingredient-details";
 
 
 export const IngredientType = ({title, id, ingredients}) => {
+
+    const [showModal, setShowModal] = useState(null);
+    const closeModal = () => {setShowModal(null)}
 
     return (
         <section className={title}>
@@ -15,9 +20,14 @@ export const IngredientType = ({title, id, ingredients}) => {
                                                 key={data._id}
                                                 {...data}
                                                 count = {1} 
-                                                onClick={(e) => {console.log(e.target)}}/>)
+                                                onClick={() => {setShowModal(data)}}/>)
                 }
             </div>
+
+            {showModal && <Modal title='Детали ингредиента' onClose={closeModal}>
+                 <IngredientDetails data={showModal}/>
+            </Modal>}
+            
         </section>
     )
 

@@ -3,10 +3,16 @@ import React, { useState } from "react"
 import PropTypes, { number, string } from 'prop-types';
 import cn from 'classnames'
 import style from '../burger-constructor/burger-constructor.module.css'
-import { Modal } from "../modal/modal"
+import { Modal } from "../modal/modal";
+import { OrderDetails } from "../order-details/order-details";
+
+
 
 
 export const BurgerConstructor = ( {constructorIngredients}) => {   
+
+    const [showModal, setShowModal] = useState(false);
+    const closeModal = () => {setShowModal(false)}
 
     const bun = constructorIngredients.filter(data => data.name === 'Краторная булка N-200i');    
     const otherIngredients = constructorIngredients.filter(data => data.name !== 'Краторная булка N-200i'); 
@@ -59,8 +65,11 @@ export const BurgerConstructor = ( {constructorIngredients}) => {
                         <p className={cn('text', 'text_type_digits-medium', 'mr-4')}>123</p>
                         <CurrencyIcon type="primary"/>
                     </div>
-                    <Button htmlType="button" size="large" onClick={() => {console.log('make order')}}>Оформить заказ</Button>
+                    <Button htmlType="button" size="large" onClick={() => {setShowModal(true)}}>Оформить заказ</Button>
                 </div>
+
+                {showModal && <Modal onClose={closeModal}><OrderDetails orderId={12345} />              
+                </Modal>}
 
               
 

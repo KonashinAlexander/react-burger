@@ -5,9 +5,10 @@ import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import style from '../burger-ingredients/burger-ingredients.module.css';
 import { IngredientType } from "../ingredient-type/ingredient-type";
 
+
 export const BurgerIngredients = ({ingredients}) => {
 
-    const [current, setCurrent] = useState('buns')
+    const [current, setCurrent] = useState('buns');
 
     const buns = ingredients.filter (item => item.type === 'bun');
     const main = ingredients.filter (item => item.type === 'main');
@@ -19,10 +20,10 @@ export const BurgerIngredients = ({ingredients}) => {
             const title = document.getElementById(tab);
             if (title) title.scrollIntoView( {behavior: "smooth"} );
 
-        } catch (err) { 
-                       
+        } catch (err) {                        
             alert(err)
-            console.log(err)           
+            console.log(err)   
+                    
         }       
     }
 
@@ -48,6 +49,7 @@ export const BurgerIngredients = ({ingredients}) => {
                 <IngredientType title='Начинки' id='main' ingredients={main} />
                 <IngredientType title='Соусы' id='sauce' ingredients={sauce} />
             </section>
+
             
         </div>
 

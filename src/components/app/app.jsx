@@ -5,8 +5,6 @@ import { AppHeader } from "../app-header/app-header"
 import { BurgerConstructor } from "../burger-constructor/burger-constructor"
 import { BurgerIngredients } from "../burger-ingredients/burger-ingredients"
 import style from './app.module.css'
-import { Modal } from "../modal/modal";
-
 
 
 export const Application = () => {
@@ -26,8 +24,6 @@ export const Application = () => {
                 <BurgerConstructor constructorIngredients={ingredients}/>
             </main>
 
-            <Modal />
-
-        </div>    
+      </div>    
     )
 }

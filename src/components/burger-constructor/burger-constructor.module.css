@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    max-height: 260px;
+    max-height: 280px;
     overflow-y: scroll;
     scrollbar-width: thin;
 }
