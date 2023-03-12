@@ -1,7 +1,10 @@
 import { Button, ConstructorElement, CurrencyIcon, DragIcon } from "@ya.praktikum/react-developer-burger-ui-components"
-import React from "react"
+import React, { useState } from "react"
+import PropTypes, { number, string } from 'prop-types';
 import cn from 'classnames'
 import style from '../burger-constructor/burger-constructor.module.css'
+import { Modal } from "../modal/modal"
+
 
 export const BurgerConstructor = ( {constructorIngredients}) => {   
 
@@ -56,16 +59,58 @@ export const BurgerConstructor = ( {constructorIngredients}) => {
                         <p className={cn('text', 'text_type_digits-medium', 'mr-4')}>123</p>
                         <CurrencyIcon type="primary"/>
                     </div>
-                    <Button htmlType="button" size="large">Оформить заказ</Button>
-                </div>                            
-                       
+                    <Button htmlType="button" size="large" onClick={() => {console.log('make order')}}>Оформить заказ</Button>
+                </div>
+
+              
+
             </div> 
         
         </> 
-    )
-    
-    
-    
-    
-    
+    )    
 }
+
+BurgerConstructor.propTypes = {
+    constructorIngredients: PropTypes.arrayOf(PropTypes.shape({
+        __v: PropTypes.number,
+        _id: PropTypes.string,
+        calories: PropTypes.number,
+        carbohydrates: PropTypes.number,
+        fat: PropTypes.number,
+        image: PropTypes.string,
+        image_large: PropTypes.string,
+        image_mobile: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.number,
+        proteins: PropTypes.number,
+        type: PropTypes.string
+    })).isRequired
+}
+
+ConstructorElement.propTypes = PropTypes.arrayOf(PropTypes.shape({        
+    text: PropTypes.string,
+    thumbnail: PropTypes.string,
+    price: PropTypes.number,
+    type: PropTypes.string,
+    isLocked: PropTypes.bool,
+    extraClass: PropTypes.string,
+    handleClose: PropTypes.func
+})).isRequired
+
+
+CurrencyIcon.propTypes = {
+    type: PropTypes.string
+}
+
+DragIcon.propTypes = {
+    type: PropTypes.string
+}
+
+Button.propTypes = {
+    type: PropTypes.string,
+    size: PropTypes.string,
+    htmlType: PropTypes.string,
+    onClick: PropTypes.func,
+    extraClass: PropTypes.string
+}
+

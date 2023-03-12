@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
+import PropTypes, { number, string } from 'prop-types';
 import cn from 'classnames';
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import style from '../burger-ingredients/burger-ingredients.module.css';
@@ -13,10 +14,16 @@ export const BurgerIngredients = ({ingredients}) => {
     const sauce = ingredients.filter (item => item.type === 'sauce');
 
     function handleClickTab (tab) {
-        setCurrent(tab);
-        const title = document.getElementById(tab);
-        if (title) title.scrollIntoView( {behavior: "smooth"} )
+        try {
+            setCurrent(tab);
+            const title = document.getElementById(tab);
+            if (title) title.scrollIntoView( {behavior: "smooth"} );
 
+        } catch (err) { 
+                       
+            alert(err)
+            console.log(err)           
+        }       
     }
 
 
@@ -45,4 +52,27 @@ export const BurgerIngredients = ({ingredients}) => {
         </div>
 
     )
+}
+
+BurgerIngredients.propTypes = {
+    ingredients: PropTypes.arrayOf(PropTypes.shape({
+        __v: PropTypes.number,
+        _id: PropTypes.string,
+        calories: PropTypes.number,
+        carbohydrates: PropTypes.number,
+        fat: PropTypes.number,
+        image: PropTypes.string,
+        image_large: PropTypes.string,
+        image_mobile: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.number,
+        proteins: PropTypes.number,
+        type: PropTypes.string
+    })).isRequired
+}
+
+Tab.propTypes = {
+    active: PropTypes.bool,
+    value: PropTypes.string,
+    onClick: PropTypes.func
 }

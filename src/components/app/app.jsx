@@ -5,6 +5,7 @@ import { AppHeader } from "../app-header/app-header"
 import { BurgerConstructor } from "../burger-constructor/burger-constructor"
 import { BurgerIngredients } from "../burger-ingredients/burger-ingredients"
 import style from './app.module.css'
+import { Modal } from "../modal/modal";
 
 
 
@@ -13,7 +14,7 @@ export const Application = () => {
     const [ingredients, setIngredients] = useState([]);
 
     useEffect(() => {
-        getIngredients().then(data => {setIngredients(data)})
+        getIngredients().then(data => {setIngredients(data)}).catch((err)=>{console.log(err)})
     }, [ ])
 
     return (     
@@ -24,6 +25,8 @@ export const Application = () => {
                 <BurgerIngredients ingredients={ingredients} />
                 <BurgerConstructor constructorIngredients={ingredients}/>
             </main>
+
+            <Modal />
 
         </div>    
     )
