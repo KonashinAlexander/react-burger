@@ -5,13 +5,8 @@ import style from '../modal-overlay/modal-overlay.module.css';
 
 export const ModalOverlay = ({onClick, onKeyDown}) => {
 
-    const handleKeyDown = (e) => {
-        console.log(e.key)
-    }
-    
-
     return (
-        <div className={style.overlay} onClick={onClick} onKeyDown={handleKeyDown}>
+        <div className={style.overlay} onClick={onClick}>
 
         </div>
     ) 
