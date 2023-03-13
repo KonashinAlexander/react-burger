@@ -9,7 +9,7 @@ import { ModalOverlay } from "../modal-overlay/modal-overlay";
 const modalRoot = document.querySelector('#modals')
 
 export const Modal = ({ title, onClose, children }) => { 
-    
+
     return createPortal (
         <>
             <div className={style.modal}>
@@ -19,7 +19,7 @@ export const Modal = ({ title, onClose, children }) => {
                 </div>
                 {children}
             </div>
-            <ModalOverlay onClick={onClose}></ModalOverlay>
+            <ModalOverlay onKeyDown={onClose} onClick={onClose}></ModalOverlay>
         </>, 
         modalRoot
     )

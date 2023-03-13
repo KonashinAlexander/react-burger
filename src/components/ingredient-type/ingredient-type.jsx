@@ -20,7 +20,8 @@ export const IngredientType = ({title, id, ingredients}) => {
                                                 key={data._id}
                                                 {...data}
                                                 count = {1} 
-                                                onClick={() => {setShowModal(data)}}/>)
+                                                onClick={() => {setShowModal(data)}}
+                                             />)
                 }
             </div>
 
